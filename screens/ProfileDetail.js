@@ -31,21 +31,21 @@ const ProfileDetail = ({ route, navigation }) => {
       if (isFavorite) {
         const updatedFavorites = favorites.filter(item => item.id !== profile.id);
         await AsyncStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-        Toast.show({
-          type: 'success',
-          position: 'top',
-          text1: 'Đã xóa khỏi danh sách yêu thích',
-          visibilityTime: 2000, 
-        });
+        // Toast.show({
+        //   type: 'success',
+        //   position: 'top',
+        //   text1: 'Đã xóa khỏi danh sách yêu thích',
+        //   visibilityTime: 2000, 
+        // });
       } else {
         favorites.push(profile);
         await AsyncStorage.setItem('favorites', JSON.stringify(favorites));
-        Toast.show({
-          type: 'success',
-          position: 'top',
-          text1: 'Đã thêm vào  danh sách yêu thích',
-          visibilityTime: 2000, 
-        });
+        // Toast.show({
+        //   type: 'success',
+        //   position: 'top',
+        //   text1: 'Đã thêm vào  danh sách yêu thích',
+        //   visibilityTime: 2000, 
+        // });
       }
 
       setIsFavorite(!isFavorite);
